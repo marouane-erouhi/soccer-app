@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React,{Component, createRef} from 'react';
 
-class PlayerForm extends Component {
+class PlayerFormModelContent extends Component {
     constructor(props){
         super(props)
 
@@ -29,10 +29,10 @@ class PlayerForm extends Component {
         })
     }
     render() { 
-        return ( 
-            <div className="row">
-                <h1 className="center">Add new Player</h1>
-                <form className="col s12" onSubmit={this.submitPlayer.bind(this)}>
+        return (
+            <form className="col s12" onSubmit={this.submitPlayer.bind(this)}>
+                <div className="modal-content">
+                    <h4>Add new Player</h4>
                     <div className="row">
                         <div className="input-field col s6">
                             <input id="firstName" ref={this.firstNameRef} type="text"/>
@@ -53,12 +53,22 @@ class PlayerForm extends Component {
                             <label htmlFor="phone">Phone</label>
                         </div>
                     </div>
-                    <button className="btn waves-effect waves-light" type="submit" name="action">Add player</button>
+                </div>
 
-                </form>
-            </div>
+                <div className="modal-footer">
+                    <button className="modal-close btn-flat waves-effect waves-light">
+                        Close
+                    </button>
+                    <button className="modal-close btn-flat waves-effect waves-light">
+                        Edit player
+                    </button>
+                    <button className="modal-close btn waves-effect waves-light" type="submit" name="action">
+                        Add player
+                    </button>
+                </div>
+            </form>
         );
     }
 }
  
-export default PlayerForm;
+export default PlayerFormModelContent;

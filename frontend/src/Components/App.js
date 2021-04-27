@@ -2,7 +2,7 @@ import './App.css';
 
 import PlayerList from './Player/PlayerList'
 import PlayerSingle from './Player/PlayerSingle'
-import PlayerForm from './Player/PlayerForm'
+import PlayerFormModelContent from './Player/PlayerFormModelContent'
 
 // import Player from './Player/Player'
 import React from 'react';
@@ -51,13 +51,8 @@ class App extends React.Component {
             <i className="large material-icons">add</i>
           </a>
         </div>
-        {/* <a
-          className="waves-effect waves-light btn modal-trigger"
-          data-target="modal1"
-        >
-          Modal
-        </a> */}
-        <Modal triggerName={this.add_player_model} />
+
+        <Modal triggerName={this.add_player_model} content={<PlayerFormModelContent/>} />
       
         <div className="row">
           <nav>
@@ -70,9 +65,9 @@ class App extends React.Component {
           <div className="col s3"><PlayerList players={this.state.players} updateCurrentPlayer={this.updateCurrentPlayer}/></div>
           <div className="col s9"><PlayerSingle player={this.state.currentPlayer}/></div>
         </div>
-        <div className="row">
+        {/* <div className="row">
           <div className="col s12"><PlayerForm/></div>
-        </div>
+        </div> */}
       </div>
     );
   }
